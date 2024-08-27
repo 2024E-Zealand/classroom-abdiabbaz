@@ -1,2 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using ClassRoomNet60;
+
+
+
+Student student = new Student("Abdi",7,1);
+
+Console.WriteLine(student);
