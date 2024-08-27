@@ -22,5 +22,19 @@ namespace ClassRoomNet60
             SemesterStart = DateTime.Now;
         }
 
+        public override string ToString()
+        {
+            return $"{{{nameof(Name)}={Name}, {nameof(Students)}={Students}, {nameof(SemesterStart)}={SemesterStart.ToString()}}}";
+        }
+
+        public void CountBirthdays()
+        {
+            var list = new List<string> { "Summer", "Winter", "Autumn", "Spring" };
+            foreach (var seasons in list)
+            {
+                var count = Students.Where(s => s.Season() == seasons).Count();
+                Console.WriteLine($"Season: {seasons}, How many: {count}");
+            }
+        }
     }
 }
